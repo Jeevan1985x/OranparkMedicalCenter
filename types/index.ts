@@ -29,3 +29,23 @@ export interface DoctorReview {
 }
  
 export interface BannerImageData extends BannerImage {}
+
+export interface DoctorDetails {
+  id: string;
+  name: string | null;
+  image: string | null;
+  credentials: string[] | null;
+  speciality: string;
+  rating: number | null;
+  reviewCount: number | null;
+  languages: string[] | null;
+  specializations: string[];
+  brief: string | null;
+}
+
+export interface TimeSlot {
+  startTime: string;
+  endTime: string;
+  startTimeUTC: Date;
+  endTimeUTC: Date;
+}
