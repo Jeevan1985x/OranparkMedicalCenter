@@ -39,7 +39,7 @@ export default async function DynamicBanner() {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-10">
         <h1 className="text-text-caption-2 text-center mb-6">
-          Welcome to Oran Park Medical Center
+          Welcome to South West Health Center
         </h1>
         <h4 className="text-text-caption-2 text-center">
           Excellence in Healthcare, Committed to Your Well-being

@@ -6,9 +6,9 @@ export default function Footer() {
     <footer className="w-full bg-background-4 ">
       <div className="max-w-[1440px] mx-auto flex flex-col justify-between px-6 md:px-8 py-12 gap-20">
         <div className="flex flex-col md:flex-row justify-between">
-          {/* Highland Medical Center Section */}
+          {/* South West Health Center Section */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-text-caption-2">Oranpark Medical Center</h4>
+            <h4 className="text-text-caption-2">South West Health Center</h4>
             <p className="body-regular text-text-caption-1">
               Excellence in Healthcare, Committed to Your Well-being
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center space-x-2 body-regular text-text-caption-1">
                 <Phone size={16} />
-                <span>(555) 123-4567</span>
+                <span>(1800) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2 body-regular text-text-caption-1">
                 <Mail size={16} />
@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2  body-regular text-text-caption-1">
                 <MapPin size={16} />
-                <span>36 maddent , Oranpark, NSW 2570</span>
+                <span>1 Podium Way, Oranpark, NSW 2570</span>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function Footer() {
  
         {/* Copyright Section */}
         <div className="text-center body-regular text-text-caption-1">
-          <p>&copy; 2025 Oranpark Medical Center. All rights reserved.</p>
+          <p>&copy; 2025 South West Health Center. All rights reserved.</p>
         </div>
       </div>
     </footer>
