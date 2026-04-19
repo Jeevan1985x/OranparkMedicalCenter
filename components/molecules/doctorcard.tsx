@@ -56,7 +56,7 @@ export default function DoctorCard({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="p-0 w-full">
+      <CardFooter className="p-0 pb-2 w-full border-t-0 bg-transparent">
         <ViewProfileButton doctorId={id} />
       </CardFooter>
     </Card>
