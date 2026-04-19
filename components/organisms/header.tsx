@@ -2,10 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { APP_NAME } from "@/lib/constants/index";
+import MenuClient from "@/components/molecules/menu-client";
 import SigninOrAvatar from "../molecules/signin-avatar";
-import MenuClient from "../molecules/menu-client";
+import { auth } from "@/auth";
  
-const Header = () => {
+const Header = async () => {
+  const session = await auth();
   return (
     <header className="bg-background-2 w-full sticky top-0 z-50">
       <div className="max-w-[1440px] h-[65px] mx-auto px-6 md:px-8 flex items-center justify-between">
@@ -17,13 +19,15 @@ const Header = () => {
               src="/images/Logo.svg"
               width={32}
               height={32}
-              alt={`${APP_NAME} logo`}
+              alt={`${APP_NAME}logo`}
             />
             <h3 className="hidden lg:block">{APP_NAME}</h3>
           </Link>
         </div>
         {/* Right Section: Navigation Links */}
-        <div><MenuClient desktopAvatar={<SigninOrAvatar />} /></div>
+        <div>
+          <MenuClient desktopAvatar={<SigninOrAvatar />} session={session} />
+        </div>
       </div>
     </header>
   );

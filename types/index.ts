@@ -1,4 +1,15 @@
-import { Department, BannerImage } from "../lib/generated/prisma/client";
+import type {
+  Department,
+  BannerImage,
+  AppointmentStatus,
+} from "../lib/generated/prisma/client";
+import type { z } from "zod";
+import type {
+  PatientDetailsFormSchema,
+  patientProfileUpdateSchema,
+  reviewFormSchema,
+} from "@/lib/validators";
+
  
 export interface ServerActionResponse<T = any> {
   success: boolean;
@@ -6,6 +17,7 @@ export interface ServerActionResponse<T = any> {
   data?: T;
   error?: string;
   errorType?: string;
+  fieldErrors?: Record<string, string[]>;
 }
  
 export interface DepartmentData extends Department {}
@@ -48,4 +60,130 @@ export interface TimeSlot {
   endTime: string;
   startTimeUTC: Date;
   endTimeUTC: Date;
+}
+
+export interface PatientProfile {
+  id: string;
+  name: string;
+  email: string;
+  phoneNumber?: string;
+  address?: string;
+  dateOfBirth?: string;
+  image?: string;
+}
+
+export interface Appointment {
+  id: string;
+  doctorName: string;
+  doctorId: string;
+  specialty?: string;
+  date: string;
+  time: string;
+  status: "upcoming" | "completed" | "cancelled" | "no show" | "cash payment";
+  reasonForVisit?: string;
+  isReviewed?: boolean;
+}
+export type ProfileUpdateInput = z.infer<typeof patientProfileUpdateSchema>;
+export type ReviewFormValues = z.infer<typeof reviewFormSchema>;
+export interface GuestAppointmentParams {
+  doctorId: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+}
+
+export interface GuestAppointmentSuccessData {
+  appointmentId: string;
+  guestIdentifier: string;
+}
+
+export interface ReservationSuccessData {
+  appointmentId: string;
+}
+
+export interface AppointmentReservationParams {
+  doctorId: string;
+  userId: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+}
+
+export interface AppointmentData {
+  appointmentId: string;
+  doctorId: string;
+  doctorName: string;
+  doctorSpecilaity: string;
+  doctorImage?: string | null;
+  date: string;
+  timeSlot: string;
+  endTime: string;
+  patientType?: "MYSELF" | "SOMEONE_ELSE";
+  patientName?: string;
+  patientdateofbirth?: Date | null;
+  phoneNumber?: string | null;
+  reasonForVisit?: string | null;
+  additionalNotes?: string | null;
+  relationship?: string | null;
+}
+ 
+export interface PatientData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: string;
+}
+
+export type PatientDetailsFormValues = z.infer<typeof PatientDetailsFormSchema>;
+ 
+export type AppointmentSubmissionData = PatientDetailsFormValues & {
+  appointmentId: string;
+  doctorId: string;
+  date: string;
+  timeSlot: string;
+  endTime: string;
+  isForSelf: boolean;
+  phone: string | null | undefined;
+  patientdateofbirth?: string;
+};
+
+export interface AppointmentDataWithBilling extends AppointmentData {
+  fee: number;
+  patientEmail: string;
+}
+
+interface RevenueDataPoint {
+  name: string;
+  Revenue: number;
+}
+ 
+interface DepartmentRevenueDataPoint {
+  name: string;
+  value: number;
+  color: string;
+}
+ 
+export interface AdminTransaction {
+  id: string;
+  transactionDate: Date;
+  amount: number;
+  appointment: {
+    appointmentStartUTC: Date;
+    patientName: string;
+    status: AppointmentStatus;
+    doctor: {
+      name: string;
+      doctorProfile: {
+        specialty: string;
+      } | null;
+    };
+  };
+}
+ 
+export interface AdminDashboardData {
+  totalRevenue: number;
+  totalAppointments: number;
+  revenueAnalyticsData: RevenueDataPoint[];
+  departmentRevenueData: DepartmentRevenueDataPoint[];
+  transactions: AdminTransaction[];
 }
