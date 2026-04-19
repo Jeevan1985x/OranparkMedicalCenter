@@ -2,7 +2,7 @@
  
 import { ServerActionResponse } from "@/types";
 import { prisma } from "@/db/prisma";
-import { AppointmentStatus } from "@/lib/generated/prisma/client";
+import { AppointmentStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
  
 export async function cancelCashAppointment(

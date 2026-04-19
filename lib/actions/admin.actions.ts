@@ -8,7 +8,7 @@ import {
 import { requireAdmin } from "@/lib/auth-guard";
 import { startOfDay, endOfDay } from "date-fns";
 import { prisma } from "@/db/prisma";
-import { TransactionStatus, AppointmentStatus } from "@/lib/generated/prisma/client";
+import { TransactionStatus, AppointmentStatus } from "@prisma/client";
  
 const getDateFilter = (dateRange?: DateRange): { gte?: Date; lte?: Date } => {
   const dateFilter: { gte?: Date; lte?: Date } = {};

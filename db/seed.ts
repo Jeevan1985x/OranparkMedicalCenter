@@ -1,4 +1,4 @@
-import { Role } from "@/lib/generated/prisma/client";
+import { Role } from "@prisma/client";
 import { prisma } from "@/db/prisma";
 import {
   users,

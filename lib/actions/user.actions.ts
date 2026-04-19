@@ -7,7 +7,7 @@ import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { prisma } from "@/db/prisma";
 import { hashSync } from "bcrypt-ts-edge"; 
 import { auth } from "@/auth"; 
-import { AppointmentStatus } from "@/lib/generated/prisma/client";
+import { AppointmentStatus } from "@prisma/client";
 import { PAGE_SIZE } from "@/lib/constants";
 import { getAppTimeZone } from "@/lib/config";
 import { toZonedTime, format } from "date-fns-tz"

@@ -2,7 +2,7 @@ import {
   PrismaClient,
   AppointmentStatus,
   PatientType,
-} from "@/lib/generated/prisma/client";
+} from "@prisma/client";
 import {
   doctorProfiles,
   appointments,

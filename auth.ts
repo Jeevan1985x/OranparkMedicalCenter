@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { authConfig } from "./auth.config";
 import Credentials from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt-ts-edge";
-import { Role } from "@/lib/generated/prisma/client";
+import { Role } from "@prisma/client";
 
 export const config: NextAuthConfig = {
   ...authConfig,

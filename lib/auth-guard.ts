@@ -1,5 +1,5 @@
 import { auth } from "@/auth"; // Import your main auth export
-import { Role } from "@/lib/generated/prisma/client"; // Import Role enum
+import { Role } from "@prisma/client"; // Import Role enum
 import { redirect } from "next/navigation";
 import { redirectToErrorPage } from "./config";
  

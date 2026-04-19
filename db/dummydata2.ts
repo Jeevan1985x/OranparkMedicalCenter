@@ -1,4 +1,4 @@
-import { Role } from "@/lib/generated/prisma/client";
+import { Role } from "@prisma/client";
 
 // This file contains dummy data for your Prisma schema.
 // You can use this in a seed script to populate your database for development and testing.

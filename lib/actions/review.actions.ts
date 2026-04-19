@@ -5,7 +5,7 @@ import { prisma } from "@/db/prisma";
 import { format, toZonedTime } from "date-fns-tz";
 import { auth } from "@/auth";
 import { fullReviewDataSchema } from "@/lib/validators";
-import { AppointmentStatus } from "@/lib/generated/prisma/client";
+import { AppointmentStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
  
 export async function getDoctorTestimonials(): Promise<

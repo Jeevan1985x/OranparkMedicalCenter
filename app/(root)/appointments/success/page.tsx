@@ -5,7 +5,7 @@ import { getConfirmationDetails } from "@/lib/actions/appointment.actions";
  
 import { AlertCircle, Info, Check } from "lucide-react";
 import Link from "next/link";
-import { AppointmentStatus } from "@/lib/generated/prisma/client";
+import { AppointmentStatus } from "@prisma/client";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
  

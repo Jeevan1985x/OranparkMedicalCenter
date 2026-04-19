@@ -6,11 +6,11 @@ import {
   TimeSlot,
 } from "@/types";
 import { prisma } from "@/db/prisma";
-import { Role } from "@/lib/generated/prisma/client";
+import { Role } from "@prisma/client";
 import { getAppTimeZone } from "@/lib/config";
 import { addMinutes, format, isSameDay, parse } from "date-fns";
 import { toZonedTime, fromZonedTime } from "date-fns-tz";
-import { AppointmentStatus, LeaveType } from "@/lib/generated/prisma/client";
+import { AppointmentStatus, LeaveType } from "@prisma/client";
  
 export async function getOurDoctors(): Promise<
   ServerActionResponse<DoctorSummary[]>

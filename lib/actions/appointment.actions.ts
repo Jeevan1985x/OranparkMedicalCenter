@@ -1,7 +1,7 @@
 "use server";
 import { ServerActionResponse,GuestAppointmentParams,GuestAppointmentSuccessData,ReservationSuccessData,AppointmentReservationParams,AppointmentSubmissionData } from "@/types";
 import { prisma } from "@/db/prisma";
-import { Appointment, AppointmentStatus, Prisma, TransactionStatus } from "@/lib/generated/prisma/client";
+import { Appointment, AppointmentStatus, Prisma, TransactionStatus } from "@prisma/client";
 import { getAppTimeZone } from "@/lib/config";
 import { toZonedTime, format,fromZonedTime  } from "date-fns-tz";
 import { v4 as uuidv4 } from "uuid";

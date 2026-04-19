@@ -2,7 +2,7 @@ import type {
   Department,
   BannerImage,
   AppointmentStatus,
-} from "../lib/generated/prisma/client";
+} from "@prisma/client";
 import type { z } from "zod";
 import type {
   PatientDetailsFormSchema,
